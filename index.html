@@ -100,10 +100,18 @@
         .hero-content p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+        }
+
+        .hindi-text {
+            display: block;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-top: 5px;
+            font-weight: normal;
         }
 
         .btn {
@@ -172,8 +180,16 @@
         }
 
         .service-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--secondary);
+        }
+
+        .service-card .hindi-desc {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-top: 8px;
+            border-top: 1px dashed #eee;
+            padding-top: 8px;
         }
 
         /* Why Choose Us Section */
@@ -208,10 +224,12 @@
         }
 
         .features-list li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
         .features-list li::before {
@@ -219,6 +237,14 @@
             color: var(--primary);
             font-weight: bold;
             font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .features-list .hindi-li {
+            font-size: 0.9rem;
+            color: #bdc3c7;
         }
 
         .why-us-image {
@@ -235,69 +261,87 @@
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .contact-form {
+        /* Owner Details Card */
+        .owner-details-card {
             background-color: var(--white);
             padding: 3rem;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: left;
             margin-top: 2rem;
+            border-top: 4px solid var(--primary);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+        .owner-details-card h3 {
             color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f2f6;
+            padding-bottom: 0.5rem;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .info-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: var(--secondary);
             font-size: 1rem;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
+        .info-value {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
         }
 
-        .contact-form .btn {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.5rem;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: #a0aec0;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
+        .contact-person {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .contact-person strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Simplification for single page static layout */
+                display: none;
             }
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            .contact-form {
+            .owner-details-card {
                 padding: 1.5rem;
             }
         }
@@ -309,13 +353,13 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                ☀️ Solar<span>Shakti</span>
+                ☀️ Solar<span>Shakti Solution</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Why Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home / होम</a></li>
+                <li><a href="#services">Services / सेवाएं</a></li>
+                <li><a href="#about">Why Us / हमारे बारे में</a></li>
+                <li><a href="#contact">Contact / संपर्क करें</a></li>
             </ul>
         </div>
     </header>
@@ -324,29 +368,35 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Solar Shakti Solution</h1>
-            <p>Empowering your home and business with sustainable, efficient, and affordable solar energy systems.</p>
-            <a href="#contact" class="btn">Get A Free Quote</a>
+            <p>
+                Empowering your home and business with sustainable, efficient, and affordable solar energy systems.
+                <span class="hindi-text">आपके घर और व्यवसाय को टिकाऊ, कुशल और किफायती सौर ऊर्जा प्रणालियों से सशक्त बनाना।</span>
+            </p>
+            <a href="#contact" class="btn">Contact Us / संपर्क करें</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Our Solar Solutions</h2>
+        <h2 class="section-title">Our Solar Solutions <span class="hindi-text" style="color:var(--secondary)">हमारी सोलर सेवाएं</span></h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🏠</div>
                 <h3>Residential Solar</h3>
                 <p>Custom rooftop solar panel installations tailored to power your home seamlessly while slashing monthly electricity bills.</p>
+                <p class="hindi-desc"><strong>घरेलू सोलर:</strong> आपके घर के लिए विशेष रूफटॉप सोलर पैनल इंस्टॉलेशन, जो आपके बिजली बिल को कम करने में मदद करता है।</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🏢</div>
                 <h3>Commercial Solar</h3>
                 <p>Scalable solar energy infrastructures designed for businesses to lower operational expenses and meet corporate sustainability goals.</p>
+                <p class="hindi-desc"><strong>कमर्शियल सोलर:</strong> व्यवसायों के लिए डिज़ाइन किया गया सोलर इंफ्रास्ट्रक्चर, जो खर्चों को घटाता है और पर्यावरण को सुरक्षित रखता है।</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🛠️</div>
                 <h3>Maintenance & Support</h3>
                 <p>Comprehensive system health checks, routine panel cleaning, and efficiency optimization to ensure peak power generation year-round.</p>
+                <p class="hindi-desc"><strong>रखरखाव और सहायता:</strong> साल भर बेहतरीन बिजली उत्पादन सुनिश्चित करने के लिए पैनल की नियमित सफाई और सिस्टम की जांच।</p>
             </div>
         </div>
     </section>
@@ -355,13 +405,27 @@
     <section id="about" class="why-us">
         <div class="why-us-container">
             <div class="why-us-text">
-                <h2>Why Solar Shakti Solution?</h2>
+                <h2>Why Solar Shakti Solution?<br><span style="font-size: 1.5rem; color: var(--primary);">सोलर शक्ति सोल्यूशन ही क्यों?</span></h2>
                 <p>We combine advanced clean energy engineering with a customer-first approach to make the transition to renewable power effortless.</p>
+                <p style="color: #bdc3c7; font-size: 0.95rem; margin-top: 5px;">हम स्वच्छ ऊर्जा इंजीनियरिंग और बेहतर ग्राहक सेवा के साथ सौर ऊर्जा अपनाना आसान बनाते हैं।</p>
+                
                 <ul class="features-list">
-                    <li>Certified engineering teams & premium materials</li>
-                    <li>Transparent pricing with fast return on investment</li>
-                    <li>End-to-end management, from site analysis to grid connection</li>
-                    <li>Long-term structural and performance warranties</li>
+                    <li>
+                        <strong>Certified engineering teams & premium materials</strong>
+                        <span class="hindi-li">प्रमाणित इंजीनियरिंग टीमें और प्रीमियम क्वालिटी सामग्री</span>
+                    </li>
+                    <li>
+                        <strong>Transparent pricing with fast return on investment</strong>
+                        <span class="hindi-li">पारदर्शी कीमतें और पैसों की जल्द वसूली (Fast ROI)</span>
+                    </li>
+                    <li>
+                        <strong>End-to-end management, from site analysis to grid connection</strong>
+                        <span class="hindi-li">साइट विश्लेषण से लेकर ग्रिड कनेक्शन तक पूरी जिम्मेदारी</span>
+                    </li>
+                    <li>
+                        <strong>Long-term structural and performance warranties</strong>
+                        <span class="hindi-li">लंबे समय की स्ट्रक्चरल और परफॉर्मेंस वारंटी</span>
+                    </li>
                 </ul>
             </div>
             <div class="why-us-image">
@@ -372,9 +436,46 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Ready to Switch to Solar?</h2>
-        <p>Drop your details below. Our technical experts will evaluate your location and provide a customized energy plan.</p>
+        <h2 class="section-title">Get In Touch <span class="hindi-text" style="color:var(--secondary)">हमसे संपर्क करें</span></h2>
+        <p>Please feel free to reach out directly via the owner details listed below for any queries or customized solar energy plans.</p>
+        <p style="color: #7f8c8d; font-size: 0.95rem; margin-top: 5px;">किसी भी जानकारी या सोलर प्लान के लिए कृपया नीचे दिए गए ओनर डिटेल्स पर सीधे संपर्क करें।</p>
         
+        <!-- OWNER CONTACT DETAILS AND ADDRESS SECTION -->
+        <div class="owner-details-card">
+            <h3>Contact Details & Office Address / संपर्क और कार्यालय का पता</h3>
+            
+            <div class="info-group">
+                <span class="info-label">Owner Contact Details / मालिक संपर्क विवरण:</span>
+                <div class="contacts-grid">
+                    <div class="contact-person">
+                        <strong>Ravi Anjana (रवि अंजाना)</strong>
+                        <span class="info-value">📞 <a href="tel:+918319004781">83190 04781</a></span>
+                    </div>
+                    <div class="contact-person">
+                        <strong>Sandeep Patidar (संदीप पाटीदार)</strong>
+                        <span class="info-value">📞 <a href="tel:+918770294336">87702 94336</a></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-group">
+                <span class="info-label">Email Address / ईमेल आईडी:</span>
+                <span class="info-value">✉️ <a href="mailto:solar@gmail.com">solar@gmail.com</a></span>
+            </div>
+            
+            <div class="info-group">
+                <span class="info-label">Office Address / ऑफिस का पता:</span>
+                <span class="info-value">
+                    📍 Dhakad Square, Shakti Steels, Jaora,<br>
+                    District - Ratlam, Madhya Pradesh (M.P.)
+                </span>
+            </div>
+        </div>
+
+        <!-- 
+          REGISTRATION FORM (HIDDEN / COMMENTED OUT AS REQUESTED)
+          If you want to bring the form back in the future, just delete the comment tags 
+          
         <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Solar Shakti Solution! This is a demo form submission.');">
             <div class="form-group">
                 <label for="name">Full Name</label>
@@ -394,6 +495,7 @@
             </div>
             <button type="submit" class="btn">Submit Request</button>
         </form>
+        -->
     </section>
 
     <!-- Footer -->
