@@ -12,7 +12,6 @@
             --light: #f8f9fa;
             --dark: #1a252f;
             --white: #ffffff;
-            --green: #27ae60;
         }
 
         * {
@@ -124,153 +123,11 @@
             border-radius: 4px;
             font-weight: bold;
             transition: background 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
         }
 
         .btn:hover {
             background-color: #e67e22;
             transform: translateY(-2px);
-        }
-
-        /* Solar Calculator Section */
-        .calculator-section {
-            padding: 5rem 2rem;
-            background-color: #ffffff;
-        }
-
-        .calc-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            overflow: hidden;
-            border: 1px solid #eef2f5;
-        }
-
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-
-        .calc-inputs {
-            padding: 2.5rem;
-        }
-
-        .input-group {
-            margin-bottom: 2rem;
-        }
-
-        .input-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .input-header label {
-            font-weight: 600;
-            color: var(--secondary);
-            font-size: 0.95rem;
-        }
-
-        .input-header .value-display {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .slider {
-            width: 100%;
-            height: 6px;
-            border-radius: 5px;
-            background: #e2e8f0;
-            outline: none;
-            accent-color: var(--primary);
-            cursor: pointer;
-        }
-
-        .range-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin-top: 0.4rem;
-        }
-
-        .calc-results {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .calc-results h3 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .metric-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .metric-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .metric-card .label {
-            font-size: 0.75rem;
-            color: #cbd5e1;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .metric-card .value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .results-list {
-            list-style: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .results-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            font-size: 0.9rem;
-            color: #e2e8f0;
-        }
-
-        .results-list li .val {
-            font-weight: bold;
-            color: #38bdf8;
-        }
-
-        .calc-note {
-            font-size: 0.8rem;
-            color: #64748b;
-            background: #f8fafc;
-            padding: 0.75rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--primary);
         }
 
         /* Services Section */
@@ -470,21 +327,13 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            word-break: break-word;
-            overflow-wrap: break-word;
+            word-break: break-word;       /* Allows breaking inside long words */
+            overflow-wrap: break-word;    /* Modern, preferred property */
             white-space: normal;
         }
 
         .info-value a:hover {
             text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--dark);
-            color: var(--white);
-            font-size: 0.9rem;
         }
 
         /* Responsive Design */
@@ -494,9 +343,6 @@
             }
             .hero-content h1 {
                 font-size: 2.5rem;
-            }
-            .calc-grid {
-                grid-template-columns: 1fr;
             }
             .owner-details-card {
                 padding: 1.5rem;
@@ -514,7 +360,6 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home / होम</a></li>
-                <li><a href="#calculator">Calculator / कैलकुलेटर</a></li>
                 <li><a href="#services">Services / सेवाएं</a></li>
                 <li><a href="#about">Why Us / हमारे बारे में</a></li>
                 <li><a href="#contact">Contact / संपर्क करें</a></li>
@@ -530,84 +375,7 @@
                 Empowering your home and business with sustainable, efficient, and affordable solar energy systems.
                 <span class="hindi-text">आपके घर और व्यवसाय को टिकाऊ, कुशल और किफायती सौर ऊर्जा प्रणालियों से सशक्त बनाना।</span>
             </p>
-            <a href="#calculator" class="btn">Calculate Savings / बचत की गणना करें</a>
-        </div>
-    </section>
-
-    <!-- Solar Calculator Section -->
-    <section id="calculator" class="calculator-section">
-        <h2 class="section-title">Solar & Savings Calculator <span class="hindi-text" style="color:var(--secondary)">सोलर और बचत कैलकुलेटर</span></h2>
-        
-        <div class="calc-container">
-            <div class="calc-grid">
-                
-                <!-- Left Column: Inputs -->
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <div class="input-header">
-                            <label for="billRange">Monthly Electricity Bill / मासिक बिजली बिल</label>
-                            <span class="value-display" id="billDisplay">₹3,500</span>
-                        </div>
-                        <input type="range" id="billRange" class="slider" min="500" max="25000" step="250" value="3500">
-                        <div class="range-labels">
-                            <span>₹500</span>
-                            <span>₹25,000+</span>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-header">
-                            <label for="areaRange">Available Roof Area / छत का क्षेत्रफल</label>
-                            <span class="value-display" id="areaDisplay">400 sq.ft</span>
-                        </div>
-                        <input type="range" id="areaRange" class="slider" min="100" max="2000" step="50" value="400">
-                        <div class="range-labels">
-                            <span>100 sq.ft</span>
-                            <span>2,000+ sq.ft</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-note">
-                        <strong>Note:</strong> Calculated based on standard Indian solar generation rates (~4 kWh/day per kW capacity) and average DISCOM electricity tariffs.
-                    </div>
-                </div>
-
-                <!-- Right Column: Results -->
-                <div class="calc-results">
-                    <div>
-                        <h3>Estimated System Specs & Savings</h3>
-
-                        <div class="metric-cards">
-                            <div class="metric-card">
-                                <span class="label">System Size</span>
-                                <span class="value" id="systemSizeVal">3.0 kW</span>
-                            </div>
-                            <div class="metric-card">
-                                <span class="label">Payback Period</span>
-                                <span class="value" id="paybackVal">3.5 Yrs</span>
-                            </div>
-                        </div>
-
-                        <ul class="results-list">
-                            <li>
-                                <span>Monthly Units Generated</span>
-                                <span class="val" id="unitsVal">~360 Units</span>
-                            </li>
-                            <li>
-                                <span>Est. Annual Savings</span>
-                                <span class="val" id="yearlySavingsVal">₹31,500</span>
-                            </li>
-                            <li>
-                                <span>Est. Cost (Pre-subsidy)</span>
-                                <span class="val" id="systemCostVal">₹1,50,000</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="#contact" class="btn" style="text-align: center; width: 100%;">Get Official Quote / कोटेशन प्राप्त करें</a>
-                </div>
-
-            </div>
+            <a href="#contact" class="btn">Contact Us / संपर्क करें</a>
         </div>
     </section>
 
@@ -706,6 +474,31 @@
                 </span>
             </div>
         </div>
+
+        <!-- 
+          REGISTRATION FORM (HIDDEN / COMMENTED OUT AS REQUESTED)
+          If you want to bring the form back in the future, just delete the comment tags 
+          
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Solar Shakti Solution! This is a demo form submission.');">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="123-456-7890">
+            </div>
+            <div class="form-group">
+                <label for="message">Property Details / Requirements</label>
+                <textarea id="message" rows="4" placeholder="Tell us about your roof space or monthly energy usage..."></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+        -->
     </section>
 
     <!-- Footer -->
@@ -713,61 +506,5 @@
         <p>&copy; 2026 Shakti Solar Solution. All rights reserved.</p>
     </footer>
 
-    <!-- Calculator Logic Script -->
-    <script>
-        const billRange = document.getElementById('billRange');
-        const areaRange = document.getElementById('areaRange');
-        
-        const billDisplay = document.getElementById('billDisplay');
-        const areaDisplay = document.getElementById('areaDisplay');
-        
-        const systemSizeVal = document.getElementById('systemSizeVal');
-        const paybackVal = document.getElementById('paybackVal');
-        const unitsVal = document.getElementById('unitsVal');
-        const yearlySavingsVal = document.getElementById('yearlySavingsVal');
-        const systemCostVal = document.getElementById('systemCostVal');
-
-        function calculateSolar() {
-            const bill = parseFloat(billRange.value);
-            const area = parseFloat(areaRange.value);
-
-            // Update range labels
-            billDisplay.textContent = '₹' + bill.toLocaleString('en-IN');
-            areaDisplay.textContent = area + ' sq.ft';
-
-            // Core solar parameters
-            const tariffPerUnit = 7.5; // Avg DISCOM rate in INR per unit
-            const monthlyUnitsNeeded = bill / tariffPerUnit;
-            
-            // 1 kW produces ~120 units per month
-            const recommendedKwByBill = Math.ceil((monthlyUnitsNeeded / 120) * 10) / 10;
-            
-            // 1 kW requires ~100 sq ft roof area
-            const maxKwByArea = Math.floor(area / 100);
-            
-            // Final system size determination
-            let finalKw = Math.min(recommendedKwByBill, maxKwByArea);
-            if (finalKw < 1) finalKw = 1; // minimum 1 kW system
-
-            const estimatedMonthlyUnits = finalKw * 120;
-            const monthlySavings = Math.min(bill, estimatedMonthlyUnits * tariffPerUnit);
-            const yearlySavings = monthlySavings * 12;
-            const systemCost = finalKw * 50000; // ~₹50,000 per kW avg cost
-            const paybackYears = (systemCost / yearlySavings).toFixed(1);
-
-            // Display results
-            systemSizeVal.textContent = finalKw.toFixed(1) + ' kW';
-            paybackVal.textContent = paybackYears + ' Yrs';
-            unitsVal.textContent = '~' + Math.round(estimatedMonthlyUnits) + ' Units';
-            yearlySavingsVal.textContent = '₹' + Math.round(yearlySavings).toLocaleString('en-IN');
-            systemCostVal.textContent = '₹' + systemCost.toLocaleString('en-IN');
-        }
-
-        billRange.addEventListener('input', calculateSolar);
-        areaRange.addEventListener('input', calculateSolar);
-
-        // Run initial calculation
-        calculateSolar();
-    </script>
 </body>
 </html>

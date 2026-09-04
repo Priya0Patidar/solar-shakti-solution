@@ -4,351 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shakti Solar Solution | Clean, Renewable Energy</title>
-    <style>
-        /* Base Reset & Variables */
-        :root {
-            --primary: #f39c12;    /* Solar Amber/Orange */
-            --secondary: #2c3e50;  /* Deep Slate/Blue */
-            --light: #f8f9fa;
-            --dark: #1a252f;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(26, 37, 47, 0.9)), 
-                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 1rem;
-            margin-top: 60px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .hindi-text {
-            display: block;
-            font-size: 1.1rem;
-            color: #e2e8f0;
-            margin-top: 5px;
-            font-weight: normal;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #e67e22;
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-
-        .service-card .hindi-desc {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-            margin-top: 8px;
-            border-top: 1px dashed #eee;
-            padding-top: 8px;
-        }
-
-        /* Why Choose Us Section */
-        .why-us {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 5rem 2rem;
-        }
-
-        .why-us-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .why-us-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .why-us-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .features-list li {
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .features-list .hindi-li {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
-
-        .why-us-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .why-us-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Owner Details Card */
-        .owner-details-card {
-            background-color: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
-            margin-top: 2rem;
-            border-top: 4px solid var(--primary);
-        }
-
-        .owner-details-card h3 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #f1f2f6;
-            padding-bottom: 0.5rem;
-        }
-
-        .info-group {
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-label {
-            font-weight: bold;
-            color: var(--secondary);
-            font-size: 1rem;
-        }
-
-        .info-value {
-            color: #555;
-            font-size: 1.1rem;
-            margin-top: 0.2rem;
-        }
-
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .contact-person {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--primary);
-        }
-
-        .contact-person strong {
-            color: var(--secondary);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .info-value a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            word-break: break-word;       /* Allows breaking inside long words */
-            overflow-wrap: break-word;    /* Modern, preferred property */
-            white-space: normal;
-        }
-
-        .info-value a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .owner-details-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -360,6 +19,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home / होम</a></li>
+                <li><a href="#calculator">Calculator / कैलकुलेटर</a></li>
+                <li><a href="#subsidy">Subsidy / सब्सिडी</a></li>
+                <li><a href="#quote">Get Quote / कोटेशन</a></li>
                 <li><a href="#services">Services / सेवाएं</a></li>
                 <li><a href="#about">Why Us / हमारे बारे में</a></li>
                 <li><a href="#contact">Contact / संपर्क करें</a></li>
@@ -375,13 +37,162 @@
                 Empowering your home and business with sustainable, efficient, and affordable solar energy systems.
                 <span class="hindi-text">आपके घर और व्यवसाय को टिकाऊ, कुशल और किफायती सौर ऊर्जा प्रणालियों से सशक्त बनाना।</span>
             </p>
-            <a href="#contact" class="btn">Contact Us / संपर्क करें</a>
+            <a href="#calculator" class="btn">Calculate Savings / बचत की गणना करें</a>
+        </div>
+    </section>
+
+    <!-- Solar & Savings Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <h2 class="section-title">Solar & Savings Calculator <span class="hindi-text">सोलर और बचत कैलकुलेटर</span></h2>
+        
+        <div class="calc-container">
+            <div class="calc-grid">
+                
+                <!-- Inputs -->
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <div class="input-header">
+                            <label for="billRange">Monthly Electricity Bill / मासिक बिजली बिल</label>
+                            <span class="value-display" id="billDisplay">₹3,500</span>
+                        </div>
+                        <input type="range" id="billRange" class="slider" min="500" max="25000" step="250" value="3500">
+                        <div class="range-labels">
+                            <span>₹500</span>
+                            <span>₹25,000+</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-header">
+                            <label for="areaRange">Available Roof Area / छत का क्षेत्रफल</label>
+                            <span class="value-display" id="areaDisplay">400 sq.ft</span>
+                        </div>
+                        <input type="range" id="areaRange" class="slider" min="100" max="2000" step="50" value="400">
+                        <div class="range-labels">
+                            <span>100 sq.ft</span>
+                            <span>2,000+ sq.ft</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-note">
+                        <strong>Note:</strong> Calculated based on standard Indian solar generation rates (~4 kWh/day per kW capacity) and average DISCOM electricity tariffs.
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="calc-results">
+                    <div>
+                        <h3>Estimated System Specs & Savings</h3>
+
+                        <div class="metric-cards">
+                            <div class="metric-card">
+                                <span class="label">System Size</span>
+                                <span class="value" id="systemSizeVal">3.0 kW</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="label">Payback Period</span>
+                                <span class="value" id="paybackVal">3.5 Yrs</span>
+                            </div>
+                        </div>
+
+                        <ul class="results-list">
+                            <li>
+                                <span>Monthly Units Generated</span>
+                                <span class="val" id="unitsVal">~360 Units</span>
+                            </li>
+                            <li>
+                                <span>Est. Annual Savings</span>
+                                <span class="val" id="yearlySavingsVal">₹31,500</span>
+                            </li>
+                            <li>
+                                <span>Est. Cost (Pre-subsidy)</span>
+                                <span class="val" id="systemCostVal">₹1,50,000</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#quote" class="btn btn-full">Get Official Quote / कोटेशन प्राप्त करें</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PM Surya Ghar Subsidy Banner & Table -->
+    <section id="subsidy" class="subsidy-section">
+        <div class="subsidy-badge">Central Government Scheme 2026</div>
+        <h2 class="section-title" style="margin-bottom: 1rem;">PM Surya Ghar: Muft Bijli Yojana</h2>
+        <p>Get up to <strong>₹78,000 Direct Central Government Subsidy</strong> directly transferred to your bank account. We handle complete paperwork, net metering, and DISCOM approvals!</p>
+
+        <div class="table-responsive">
+            <table class="subsidy-table">
+                <thead>
+                    <tr>
+                        <th>System Capacity</th>
+                        <th>Monthly Generation</th>
+                        <th>Government Subsidy</th>
+                        <th>Approx Net Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1 kW</strong></td>
+                        <td>~120 Units/Month</td>
+                        <td><span class="green-text">₹30,000</span></td>
+                        <td>₹35,000 - ₹45,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2 kW</strong></td>
+                        <td>~240 Units/Month</td>
+                        <td><span class="green-text">₹60,000</span></td>
+                        <td>₹70,000 - ₹85,000</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>3 kW (Most Popular)</strong></td>
+                        <td>~360 Units/Month</td>
+                        <td><span class="green-text">₹78,000 (Max)</span></td>
+                        <td>₹1,02,000 - ₹1,32,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="small-note">*Bank financing available with low interest rates starting at 5.75% p.a. (Collateral-free up to ₹2 Lakhs).</p>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section id="quote" class="lead-form-section">
+        <div class="form-container">
+            <h3>Get Free Site Inspection & Quote</h3>
+            <p>Fill out your details below and our local engineers in Jaora/Ratlam will contact you with exact solar installation details.</p>
+            
+            <form id="solarLeadForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="custName" placeholder="Your Full Name / आपका पूरा नाम" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="custPhone" placeholder="Mobile Number / मोबाइल नंबर" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="custLocation" placeholder="City / Area (e.g. Jaora, Ratlam)" required>
+                </div>
+                <div class="form-group">
+                    <select id="solarRequirement" required>
+                        <option value="">Select Required System Type</option>
+                        <option value="Residential (Home Solar)">Residential (Home Solar)</option>
+                        <option value="Commercial (Business/Factory)">Commercial (Business/Factory)</option>
+                        <option value="Agricultural Solar Pump">Agricultural Solar Pump</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> Send Request via WhatsApp
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Our Solar Solutions <span class="hindi-text" style="color:var(--secondary)">हमारी सोलर सेवाएं</span></h2>
+        <h2 class="section-title">Our Solar Solutions <span class="hindi-text">हमारी सोलर सेवाएं</span></h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🏠</div>
@@ -408,9 +219,9 @@
     <section id="about" class="why-us">
         <div class="why-us-container">
             <div class="why-us-text">
-                <h2>Why Shakti Solar Solutions?<br><span style="font-size: 1.5rem; color: var(--primary);">शक्ति सोलर सोल्यूशन ही क्यों?</span></h2>
+                <h2>Why Shakti Solar Solutions?<br><span class="highlight-title">शक्ति सोलर सोल्यूशन ही क्यों?</span></h2>
                 <p>We combine advanced clean energy engineering with a customer-first approach to make the transition to renewable power effortless.</p>
-                <p style="color: #bdc3c7; font-size: 0.95rem; margin-top: 5px;">हम स्वच्छ ऊर्जा इंजीनियरिंग और बेहतर ग्राहक सेवा के साथ सौर ऊर्जा अपनाना आसान बनाते हैं।</p>
+                <p class="why-us-subtext">हम स्वच्छ ऊर्जा इंजीनियरिंग और बेहतर ग्राहक सेवा के साथ सौर ऊर्जा अपनाना आसान बनाते हैं।</p>
                 
                 <ul class="features-list">
                     <li>
@@ -437,13 +248,23 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Trust & Partner Brands Section -->
+    <section class="trust-section">
+        <h2 class="section-title">Trusted Solar Tier-1 Partners</h2>
+        <div class="brand-strip">
+            <p>Authorized Installers & Quality Components From Leading Brands:</p>
+            <div class="brand-names">
+                <span>TATA Power Solar</span> | <span>Waaree</span> | <span>Vikram Solar</span> | <span>Havells</span> | <span>Adani Solar</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Embedded Google Maps -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch <span class="hindi-text" style="color:var(--secondary)">हमसे संपर्क करें</span></h2>
+        <h2 class="section-title">Get In Touch <span class="hindi-text">हमसे संपर्क करें</span></h2>
         <p>Please feel free to reach out directly via the owner details listed below for any queries or customized solar energy plans.</p>
-        <p style="color: #7f8c8d; font-size: 0.95rem; margin-top: 5px;">किसी भी जानकारी या सोलर प्लान के लिए कृपया नीचे दिए गए ओनर डिटेल्स पर सीधे संपर्क करें।</p>
+        <p class="contact-subtext">किसी भी जानकारी या सोलर प्लान के लिए कृपया नीचे दिए गए ओनर डिटेल्स पर सीधे संपर्क करें।</p>
         
-        <!-- OWNER CONTACT DETAILS AND ADDRESS SECTION -->
         <div class="owner-details-card">
             <h3>Contact Details & Office Address / संपर्क और कार्यालय का पता</h3>
             
@@ -473,32 +294,14 @@
                     District - Ratlam, Madhya Pradesh (M.P.)
                 </span>
             </div>
-        </div>
 
-        <!-- 
-          REGISTRATION FORM (HIDDEN / COMMENTED OUT AS REQUESTED)
-          If you want to bring the form back in the future, just delete the comment tags 
-          
-        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Solar Shakti Solution! This is a demo form submission.');">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required placeholder="John Doe">
+            <!-- Embedded Google Map -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.848834925438!2d75.123456!3d23.633333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM4JzAwLjAiTiA3NcKwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required placeholder="john@example.com">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" required placeholder="123-456-7890">
-            </div>
-            <div class="form-group">
-                <label for="message">Property Details / Requirements</label>
-                <textarea id="message" rows="4" placeholder="Tell us about your roof space or monthly energy usage..."></textarea>
-            </div>
-            <button type="submit" class="btn">Submit Request</button>
-        </form>
-        -->
+        </div>
     </section>
 
     <!-- Footer -->
@@ -506,5 +309,76 @@
         <p>&copy; 2026 Shakti Solar Solution. All rights reserved.</p>
     </footer>
 
+    <!-- Floating Contact Actions -->
+    <div class="quick-contact-bar">
+        <a href="https://wa.me/918770294336?text=Namaste%20Shakti%20Solar!%20I%20want%20a%20free%20solar%20quote%20and%20site%20inspection." 
+           class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+           <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
+        </a>
+        <a href="tel:+918770294336" class="call-float" aria-label="Call Now">
+           <i class="fas fa-phone-alt"></i> <span>Call Us</span>
+        </a>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Calculator Logic
+        const billRange = document.getElementById('billRange');
+        const areaRange = document.getElementById('areaRange');
+        
+        const billDisplay = document.getElementById('billDisplay');
+        const areaDisplay = document.getElementById('areaDisplay');
+        
+        const systemSizeVal = document.getElementById('systemSizeVal');
+        const paybackVal = document.getElementById('paybackVal');
+        const unitsVal = document.getElementById('unitsVal');
+        const yearlySavingsVal = document.getElementById('yearlySavingsVal');
+        const systemCostVal = document.getElementById('systemCostVal');
+
+        function calculateSolar() {
+            const bill = parseFloat(billRange.value);
+            const area = parseFloat(areaRange.value);
+
+            billDisplay.textContent = '₹' + bill.toLocaleString('en-IN');
+            areaDisplay.textContent = area + ' sq.ft';
+
+            const tariffPerUnit = 7.5;
+            const monthlyUnitsNeeded = bill / tariffPerUnit;
+            
+            const recommendedKwByBill = Math.ceil((monthlyUnitsNeeded / 120) * 10) / 10;
+            const maxKwByArea = Math.floor(area / 100);
+            
+            let finalKw = Math.min(recommendedKwByBill, maxKwByArea);
+            if (finalKw < 1) finalKw = 1;
+
+            const estimatedMonthlyUnits = finalKw * 120;
+            const monthlySavings = Math.min(bill, estimatedMonthlyUnits * tariffPerUnit);
+            const yearlySavings = monthlySavings * 12;
+            const systemCost = finalKw * 50000;
+            const paybackYears = (systemCost / yearlySavings).toFixed(1);
+
+            systemSizeVal.textContent = finalKw.toFixed(1) + ' kW';
+            paybackVal.textContent = paybackYears + ' Yrs';
+            unitsVal.textContent = '~' + Math.round(estimatedMonthlyUnits) + ' Units';
+            yearlySavingsVal.textContent = '₹' + Math.round(yearlySavings).toLocaleString('en-IN');
+            systemCostVal.textContent = '₹' + systemCost.toLocaleString('en-IN');
+        }
+
+        billRange.addEventListener('input', calculateSolar);
+        areaRange.addEventListener('input', calculateSolar);
+        calculateSolar();
+
+        // WhatsApp Form Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const loc = document.getElementById('custLocation').value;
+            const type = document.getElementById('solarRequirement').value;
+
+            const msg = `Namaste Shakti Solar! I want a free site inspection.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Location:* ${loc}%0A*Requirement:* ${type}`;
+            window.open(`https://wa.me/918770294336?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
